@@ -54,7 +54,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
     def _generate_jwt_token(self):
         dt = datetime.now() + timedelta(days=60)
-        token = jwt.encode({ 'id': self.pk, 'exp': int(time.mktime(dt.timetuple()))})
+        token = jwt.encode({ 'id': self.pk, 'exp': int(time.mktime(dt.timetuple()))}, key=settings.SECRET_KEY, algorithm='HS256')
         return token.decode('utf-8')
 
     @property
