@@ -3,23 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4941eb8b-f20a-4fe3-b808-964a1393ee7b" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/authentication/backends.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/authentication/renderers.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/authentication/serializers.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/authentication/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/exceptions.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/profiles/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/profiles/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/profiles/apps.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/profiles/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/profiles/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/profiles/tests.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/profiles/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api_test/settings.py" afterPath="$PROJECT_DIR$/api_test/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api_test/urls.py" afterPath="$PROJECT_DIR$/api_test/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authentication/models.py" afterPath="$PROJECT_DIR$/authentication/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authentication/views.py" afterPath="$PROJECT_DIR$/authentication/views.py" />
     </list>
     <ignored path="C:\Users\sande\Documents\prac\websites\api_test\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -306,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509050542107</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="authentication app">
+      <created>1509062362250</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1509062362250</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
