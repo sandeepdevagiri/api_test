@@ -37,15 +37,38 @@ def getDocument(collectionname, filter):
     if data['connection']['collection'] is None:
         return data['errors']
 
-    doc = data['connection']['collection'].find_one(filter)
+    if filter is not None:
+        doc = data['connection']['collection'].find_one(filter)
+    else:
+        doc = data['connection']['collection'].find_one()
     doc.pop('_id')
     document.append(doc)
 
     return document
 
 
-def insertDocument(collectionname, profile_data):
+def insertDocument(collectionname, update_data):
     data = connect(collectionname)
-    data['connection']['collection'].insert_one(profile_data)
+    data['connection']['collection'].insert_one(update_data)
 
     return True
+
+
+def updateDocument(collectionname, filter, update_data):
+    data = connect(collectionname)
+    document = []
+
+    if filter is not None:
+        doc = data['connection']['collection'].find_one(filter)
+    else:
+        doc = data['connection']['collection'].find_one()
+
+    for k, v in update_data.items():
+        doc[k] = v
+
+    data['connection']['collection'].save(doc)
+
+    doc.pop('_id')
+    document.append(doc)
+
+    return document

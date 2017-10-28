@@ -19,3 +19,18 @@ class ProfileRetrieveView(APIView):
         }
         response = mongoops.getDocument('profile', filter)
         return Response(response, status=status.HTTP_200_OK)
+
+
+class ProfileUpdateView(APIView):
+    permission_classes = (IsAuthenticated, )
+
+    def post(self, request):
+        username = request.user.email
+        profile_data = request.data
+        filter = {
+            'user': {
+                'username': username
+            }
+        }
+        response = mongoops.updateDocument('profile', filter, profile_data)
+        return Response(response, status=status.HTTP_200_OK)

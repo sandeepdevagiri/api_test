@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/auth/', include('authentication.urls', namespace='authentication')),
     url(r'^api/profile/', include('profiles.urls', namespace='profile')),
+    url(r'^api/article/', include('articles.urls', namespace='article')),
 ]

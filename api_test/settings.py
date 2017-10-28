@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'sslserver',
 
     'authentication',
+    'profiles',
+    'articles',
 ]
 
 AUTH_USER_MODEL = 'authentication.Account'
