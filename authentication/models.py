@@ -8,6 +8,8 @@ import time
 from django.conf import settings
 from django.contrib.auth.models import ( AbstractBaseUser, BaseUserManager, PermissionsMixin )
 
+from core.models import TimestampedModel
+
 # Create your models here.
 
 
@@ -36,13 +38,11 @@ class AccountManager(BaseUserManager):
         return user
 
 
-class Account(AbstractBaseUser, PermissionsMixin):
+class Account(AbstractBaseUser, PermissionsMixin, TimestampedModel):
     username = models.CharField(db_index=True, max_length=255, unique=True)
     email = models.EmailField(db_index=True, unique=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']

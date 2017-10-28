@@ -2,10 +2,12 @@ from rest_framework import status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.generics import RetrieveUpdateAPIView
+from rest_framework.generics import RetrieveUpdateAPIView, RetrieveAPIView
 
 from .serializers import ( RegistrationSerializer, LoginSerializer, AccountSerializer )
 from .renderers import AccountJSONRenderer
+
+from core import mongoops
 
 # Create your views here.
 
@@ -21,6 +23,13 @@ class RegistrationAPIView(APIView):
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+
+        username = serializer.data['username']
+        profile_data = {
+            'user': {'username': username},
+            'profile': {'firstname': '', 'lastname': '', 'image': ''}
+        }
+        mongoops.insertDocument('profile', profile_data)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 

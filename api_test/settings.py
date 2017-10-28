@@ -132,3 +132,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MONGO_URI = 'mongodb://admin:Shim102Writ626@appcluster-shard-00-00-c9vrm.mongodb.net:27017,appcluster-shard-00-01-c9vrm.mongodb.net:27017,appcluster-shard-00-02-c9vrm.mongodb.net:27017/test?ssl=true&replicaSet=appcluster-shard-0&authSource=admin'
