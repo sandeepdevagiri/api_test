@@ -44,12 +44,34 @@ def getDocument(collectionname, filter):
     doc.pop('_id')
     document.append(doc)
 
+    data['connection']['client'].close()
+
     return document
+
+
+def getDocuments(collectionname, filter):
+    data = connect(collectionname)
+    documents = []
+
+    if filter is not None:
+        docs = data['connection']['collection'].find(filter)
+    else:
+        docs = data['connection']['collection'].find()
+
+    for doc in docs:
+        doc.pop('_id')
+        documents.append(doc)
+
+    data['connection']['client'].close()
+
+    return documents
 
 
 def insertDocument(collectionname, update_data):
     data = connect(collectionname)
     data['connection']['collection'].insert_one(update_data)
+
+    data['connection']['client'].close()
 
     return True
 
@@ -71,4 +93,13 @@ def updateDocument(collectionname, filter, update_data):
     doc.pop('_id')
     document.append(doc)
 
+    data['connection']['client'].close()
+
     return document
+
+
+def numDocuments(collectionname):
+    data = connect(collectionname)
+    data['connection']['client'].close()
+
+    return data['connection']['collection'].count()
